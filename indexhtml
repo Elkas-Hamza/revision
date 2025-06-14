@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résumé Détaillé des Cours OFPPT Web Full Stack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.4em; }
+        h4 { font-size: 1.2em; }
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 20px;
+        }
+        li strong {
+            color: #e74c3c;
+        }
+        code, pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            display: block;
+            margin-bottom: 1em;
+            white-space: pre-wrap; /* Ensures long lines wrap */
+            word-wrap: break-word; /* Ensures long words break */
+        }
+        blockquote {
+            background: #f9f9f9;
+            border-left: 5px solid #ccc;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+            font-style: italic;
+        }
+        strong {
+            color: #34495e;
+        }
+        em {
+            color: #1abc9c;
+        }
+        .reference {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 0.5em;
+        }
+        .table-of-contents {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .table-of-contents h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .table-of-contents ul ul {
+            padding-left: 15px;
+        }
+        .table-of-contents a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Résumé Détaillé des Cours OFPPT Web Full Stack</h1>
+
+        <p>Ce document fournit un résumé détaillé des concepts clés, définitions et commandes nécessaires pour la préparation de votre examen de la filière Développement Digital option Web Full Stack.</p>
+
+        <div class="table-of-contents">
+            <h3>Table des Matières</h3>
+            <ul>
+                <li><a href="#m214-cloud-native">M214 – Créer une application cloud native</a>
+                    <ul>
+                        <li><a href="#m214-cloud-native-intro">1. Introduire le Cloud Native</a></li>
+                        <li><a href="#m214-rest-api">2. Créer des APIs REST simples en Node.js et Express.js</a></li>
+                        <li><a href="#m214-microservices-app">3. Créer une application Microservice</a></li>
+                        <li><a href="#m214-containers">4. Manipuler les conteneurs</a></li>
+                        <li><a href="#m214-deploy-azure">5. Déployer une application cloud native en Azure Cloud</a></li>
+                    </ul>
+                </li>
+                <li><a href="#m111-data-nosql">M111 – Gérer les données (Partie 2 - NoSQL MongoDB)</a>
+                    <ul>
+                        <li><a href="#m111-nosql-intro">1. Découvrir les bases de données NoSQL</a></li>
+                        <li><a href="#m111-mongodb-setup">2. Mettre en place une base de données MongoDB</a></li>
+                        <li><a href="#m111-mongodb-modeling">3. Modéliser les documents</a></li>
+                        <li><a href="#m111-mongodb-manipulation">4. Manipuler les données avec MongoDB</a></li>
+                        <li><a href="#m111-mongodb-security">5. Sécuriser une base de données MongoDB</a></li>
+                    </ul>
+                </li>
+                <li><a href="#m111-data-mysql">M111 – Gérer les données (Partie 1 - MySQL)</a>
+                    <ul>
+                        <li><a href="#m111-mysql-procedural">1. Maîtriser le langage de programmation procédurale sous MySQL</a></li>
+                        <li><a href="#m111-mysql-optimize">2. Optimiser une base de données MySQL</a></li>
+                        <li><a href="#m111-mysql-protect">3. Protéger la base de données MySQL</a></li>
+                    </ul>
+                </li>
+                <li><a href="#m109-prepare-web-project">M109 – Préparer un projet web (Partie 1)</a>
+                    <ul>
+                        <li><a href="#m109-web-project-modeling">1. Modéliser un projet web</a></li>
+                        <li><a href="#m109-use-case-diagram">2. Modéliser les besoins client par un diagramme de cas d'utilisation</a></li>
+                        <li><a href="#m109-class-diagram">3. Modéliser les données du projet par un diagramme de classes</a></li>
+                        <li><a href="#m109-sequence-diagram">4. Modéliser les interactions d’objets d’un système à l’aide d’un diagramme de séquence</a></li>
+                    </ul>
+                </li>
+                <li><a href="#m109-prepare-web-project-part2">M109 – Préparer un projet web (Partie 2)</a>
+                    <ul>
+                        <li><a href="#m109-mockup">1. Créer une maquette pour le développement web</a></li>
+                    </ul>
+                </li>
+                <li><a href="#m110-agile">M110 – Adopter l'approche Agile</a>
+                    <ul>
+                        <li><a href="#m110-project-management-fundamentals">1. Connaître les fondamentaux de la gestion de projet</a></li>
+                        <li><a href="#m110-plan-project">2. Planifier un projet</a></li>
+                        <li><a href="#m110-agile-scrum">3. Adopter l'approche Agile dans la gestion de projet</a></li>
+                        <li><a href="#m110-vcs-quality">4. Mettre en œuvre des outils de gestion de versions et de mesure de la qualité du code</a></li>
+                        <li><a href="#m110-devops-chain">5. Mettre en œuvre les outils de la chaîne du DevOps</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Module: Créer une application cloud native (M214) -->
+        <h2 id="m214-cloud-native">M214 – Créer une application cloud native</h2>
+        <p>Ce cours se concentre sur l'introduction, la création, la manipulation et le déploiement d'applications cloud native.</p>
+
+        <h3 id="m214-cloud-native-intro">1. Introduire le Cloud Native</h3>
+        <ul>
+            <li>
+                <h4>Définition du cloud :</h4>
+                <p>Le terme « cloud » désigne les serveurs accessibles sur Internet, ainsi que les logiciels et bases de données qui fonctionnent sur ces serveurs. Ces serveurs sont hébergés dans des datacenters mondiaux. L'utilisation du cloud computing permet aux utilisateurs et aux entreprises de ne plus avoir à gérer eux-mêmes des serveurs physiques ou à exécuter des applications logicielles sur leurs propres équipements, le fournisseur de cloud s'en charge. Cela permet un accès aux mêmes fichiers et applications depuis presque n'importe quel appareil.</p>
+            </li>
+            <li>
+                <h4>Avantages du Cloud :</h4>
+                <p>Accès universel aux fichiers et applications, suppression des coûts de mise à jour et de maintenance des serveurs pour les entreprises.</p>
+            </li>
+            <li>
+                <h4>Exemples de fournisseurs cloud :</h4>
+                <p>Microsoft, Amazon, IBM, Salesforce, Google Cloud, SAP, Oracle, ServiceNow, Workday, Snowflake. Les principaux fournisseurs de cloud public sont Alibaba Cloud, Microsoft Azure, Google Cloud, Amazon Web Services (AWS) et IBM Cloud.</p>
+            </li>
+            <li>
+                <h4>Différence entre cloud privé, public et hybride :</h4>
+                <ul>
+                    <li><strong>Clouds publics :</strong> Environnements cloud créés à partir d'une infrastructure informatique qui n'appartient pas à l'utilisateur final et sont généralement accessibles via l'internet public.</li>
+                    <li><strong>Clouds privés :</strong> Environnements cloud spécifiques à un utilisateur final ou à un groupe, souvent exécutés derrière leur pare-feu avec un accès isolé. Ils peuvent également être hébergés dans des datacenters loués. On distingue les clouds privés gérés (déployés et gérés par un tiers) et les clouds dédiés (un cloud spécialisé au sein d'un cloud public).</li>
+                    <li><strong>Cloud hybride :</strong> Fonctionne comme un environnement informatique unique combinant plusieurs environnements (au moins un cloud privé et un public, ou plusieurs privés, ou plusieurs publics, ou un environnement virtuel connecté à un cloud) via divers réseaux (LAN, WAN, VPN, API).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Services du cloud (IaaS, PaaS, SaaS) :</h4>
+                <p>L'expression « as-a-Service » signifie qu'un tiers fournit un service de cloud computing pour que l'utilisateur puisse se concentrer sur son code et ses clients. Il existe trois principaux types :</p>
+                <ul>
+                    <li><strong>IaaS (Infrastructure-as-a-Service) :</strong> Le fournisseur offre la virtualisation, le stockage, les réseaux et les serveurs. L'utilisateur est responsable du système d'exploitation, des données, applications, middleware et environnements d'exécution. C'est le modèle le plus flexible, évitant la gestion de l'infrastructure physique.</li>
+                    <li><strong>PaaS (Platform-as-a-Service) :</strong> Le fournisseur fournit, en plus de l'infrastructure IaaS, le système d'exploitation et les environnements d’exécution. L'utilisateur contrôle le déploiement et la configuration des applications. Idéal pour les développeurs. Les services de gestion de bases de données sont considérés comme du PaaS.</li>
+                    <li><strong>SaaS (Software-as-a-Service) :</strong> Le fournisseur gère une application complète accessible via un navigateur web ou un client lourd. L'utilisateur n'a pas à se soucier des mises à jour ou de la maintenance logicielle. C'est une option avantageuse pour les PME.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Définir l’approche cloud native :</h4>
+                <ul>
+                    <li><strong>Définition :</strong> Le Cloud Native est une approche de développement logiciel où les applications sont conçues pour exploiter pleinement l'architecture du Cloud Computing, en se concentrant sur les microservices individuels exécutés sur des plateformes agiles basées sur des conteneurs. Cette approche accélère le développement et favorise la création d'applications résilientes et évolutives.</li>
+                    <li><strong>Avantages :</strong> Flexibilité (modifications de code n'impactent pas l'ensemble), évolutivité des applications, haut niveau d'automatisation réduisant les erreurs humaines.</li>
+                    <li><strong>Caractéristiques de l'approche cloud native :</strong> Utilisation d'architectures en microservices, technologie de conteneurs, livraisons en continu, pipelines de développement, infrastructure exprimée sous forme de code (IaC), et une pratique DevOps.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m214-rest-api">2. Créer des APIs REST simples en Node.js et Express.js</h3>
+        <ul>
+            <li>
+                <h4>API (Application Programming Interface) :</h4>
+                <p>Un ensemble de définitions et de protocoles qui facilite la création et l'intégration de logiciels d'applications. C'est l'intermédiaire permettant à deux systèmes informatiques indépendants d'interagir automatiquement.</p>
+            </li>
+            <li>
+                <h4>API REST :</h4>
+                <p>Un style architectural et une méthodologie utilisés dans le développement de services Internet. Sa forme complète est "Interface de programmation d'applications de transfert d'état représentationnel". Elle décompose une transaction en une séquence de petits composants, offrant flexibilité de développement et exploitant les méthodes HTTP.</p>
+            </li>
+            <li>
+                <h4>HTTP (Hypertext Transfer Protocol) :</h4>
+                <p>Protocole pour la communication client-serveur, basé sur le modèle requête-réponse.</p>
+                <ul>
+                    <li><strong>Méthodes principales :</strong> <strong>GET</strong> (demande des données, peut être mise en cache, moins sécurisée) et <strong>POST</strong> (envoie des données à traiter, plus sécurisée).</li>
+                    <li><strong>Autres méthodes :</strong> HEAD, PUT, DELETE, OPTIONS, CONNECT.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Node.js :</h4>
+                <p>Un environnement d'exécution JavaScript single-thread, open-source et multi-plateforme pour créer des applications rapides et évolutives côté serveur et en réseau. Il utilise le moteur V8 de Google et une architecture d'E/S non bloquante et pilotée par les événements.</p>
+                <ul>
+                    <li><strong>Modules Node.js :</strong> Fichiers JavaScript contenant des fonctions, objets ou variables à partager. Export via <code>module.exports</code>, import via <code>require</code> ou <code>import</code> (ES6).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Express.js :</h4>
+                <p>Un framework Node.js utilisé pour développer la partie Backend des applications web.</p>
+            </li>
+            <li>
+                <h4>Postman :</h4>
+                <p>Une plateforme API pour la création et l'utilisation d'API, largement utilisée pour tester des API sans écrire de code.</p>
+            </li>
+            <li>
+                <h4>Middlewares (Express) :</h4>
+                <p>Fonctions qui s'exécutent lors de la requête au serveur, ayant accès aux paramètres de la requête et de la réponse.</p>
+            </li>
+            <li>
+                <h4>Authentification d'une API REST avec JWT (JSON Web Token) :</h4>
+                <ul>
+                    <li><strong>JWT (JSON Web Token) :</strong> Des jetons générés par un serveur lors de l'authentification d'un utilisateur, transmis au client et renvoyés avec chaque requête pour identification.</li>
+                    <li><strong>Structure d'un jeton JWT :</strong> Se compose d'un "Header", d'un "Payload" et d'une "Signature".</li>
+                    <li><strong>Sécurisation des mots de passe :</strong> Les mots de passe sont stockés sous forme de hash (chaîne chiffrée) via des modules comme <code>bcrypt</code>.</li>
+                    <li><strong>Middleware d’authentification :</strong> Fonction qui vérifie la validité du token dans les requêtes avant d'autoriser l'accès aux services.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m214-microservices-app">3. Créer une application Microservice</h3>
+        <ul>
+            <li>
+                <h4>Différence entre l’architecture monolithique et l’architecture des microservices :</h4>
+                <ul>
+                    <li><strong>Application monolithique :</strong> Développée en un seul bloc, difficile à déployer et à scaler.</li>
+                    <li><strong>Architecture microservices :</strong> Décompose une application en petites unités indépendantes, chacune avec sa propre logique et base de données. Offre agilité, scalabilité, déploiement rapide et ciblé.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Communication entre services :</h4>
+                <ul>
+                    <li><strong>Appel synchrone point à point :</strong> Un service appelle un autre et attend une réponse.</li>
+                    <li><strong>Appel asynchrone point à point :</strong> Un service appelle un autre et continue sans attendre de réponse ("Fire and forget"), souvent via un protocole comme AMQP.</li>
+                    <li><strong>Diffusion d’événements :</strong> Un service envoie une notification à d'autres services sans attendre de réponse.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Intermédiaire entre client et microservices :</h4>
+                <p>Les <strong>passerelles API (API gateways)</strong> servent de point d'entrée unique et équilibrent la charge.</p>
+            </li>
+            <li>
+                <h4>Communication entre microservices avec RabbitMQ :</h4>
+                <p>Permet une communication asynchrone via un "message broker" basé sur le protocole AMQP, où les messages sont transportés des producteurs aux consommateurs via des files d'attente.</p>
+            </li>
+        </ul>
+
+        <h3 id="m214-containers">4. Manipuler les conteneurs</h3>
+        <ul>
+            <li>
+                <h4>Appréhender la notion des conteneurs :</h4>
+                <ul>
+                    <li><strong>Conteneurisation :</strong> Type de virtualisation qui isole le code et ses dépendances, permettant une exécution cohérente sur n'importe quel environnement.</li>
+                    <li><strong>Docker :</strong> Plateforme open source leader pour la conteneurisation, facilitant la création et la gestion des conteneurs.</li>
+                    <li><strong>Différence entre machine virtuelle et conteneur :</strong> Les VM virtualisent le matériel et nécessitent un OS complet, tandis que les conteneurs virtualisent l'OS et partagent le noyau, les rendant plus légers et rapides.</li>
+                    <li><strong>Avantages de la conteneurisation :</strong> Portabilité, vitesse, isolation, facilité de gestion, mise à l'échelle flexible.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Prendre en main Docker :</h4>
+                <ul>
+                    <li><strong>Docker Desktop :</strong> Application native pour Windows/Mac pour gérer Docker.</li>
+                    <li><strong>Terminologies Docker :</strong> Moteur Docker (gère conteneurs), Docker Daemon (serveur), Client Docker (CLI), Registre Docker (catalogue d'images), Docker Hub (registre public).</li>
+                    <li><strong>Image Docker :</strong> Modèle en lecture seule pour créer des conteneurs, défini par un Dockerfile.</li>
+                    <li><strong>Conteneur Docker :</strong> Instance exécutable d'une image.</li>
+                    <li><strong>Commandes Docker :</strong>
+                        <ul>
+                            <li><code>docker pull &lt;nom_image&gt;</code> : Télécharge une image.</li>
+                            <li><code>docker rmi &lt;nom_image&gt;</code> : Supprime une image locale.</li>
+                            <li><code>docker run &lt;nom_image&gt;</code> : Crée et démarre un conteneur.</li>
+                            <li><code>docker ps</code> : Liste les conteneurs actifs.</li>
+                            <li><code>docker ps -a</code> : Liste tous les conteneurs.</li>
+                            <li><code>docker stop &lt;id_conteneur&gt;</code> : Arrête un conteneur.</li>
+                            <li><code>docker start &lt;id_conteneur&gt;</code> : Démarre un conteneur arrêté.</li>
+                            <li><code>docker rm &lt;id_conteneur&gt;</code> : Supprime un conteneur.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dockerfile :</strong> Fichier avec des instructions pour construire une image Docker (<code>FROM</code>, <code>RUN</code>, <code>COPY</code>, <code>EXPOSE</code>, <code>CMD</code>, etc.). Le fichier <code>.dockerignore</code> exclut des fichiers du build.</li>
+                    <li><strong>Docker Compose :</strong> Outil pour définir et exécuter des applications Docker multi-conteneurs via un fichier <code>docker-compose.yml</code> (définit services, ports, volumes, dépendances).</li>
+                    <li><strong>Commandes Docker Compose :</strong>
+                        <ul>
+                            <li><code>docker-compose build</code> : Construit les images.</li>
+                            <li><code>docker-compose up</code> : Construit et démarre les conteneurs.</li>
+                            <li><code>docker-compose down</code> : Arrête et supprime les conteneurs.</li>
+                            <li><code>docker-compose stop</code> : Arrête les conteneurs.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m214-deploy-azure">5. Déployer une application cloud native en Azure Cloud</h3>
+        <ul>
+            <li>
+                <h4>Définition de « Azure App Service » :</h4>
+                <p>Un service d'Azure qui permet de créer rapidement et facilement des applications web et mobiles prêtes pour l'entreprise, déployées sur une infrastructure cloud évolutive et fiable.</p>
+            </li>
+            <li>
+                <h4>Déployer une application multi-conteneur en Azure App Service :</h4>
+                <p>Le processus implique de créer les images Docker localement, de les envoyer à Docker Hub (ou Azure Container Registry) et de configurer une application web sur Azure App Service pour qu'elle télécharge automatiquement ces images. Le <strong>déploiement continu</strong> est une option clé ici.</p>
+            </li>
+        </ul>
+
+        <!-- Module: Gérer les données (M111) - Partie 2 (NoSQL) -->
+        <h2 id="m111-data-nosql">M111 – Gérer les données (Partie 2 - NoSQL MongoDB)</h2>
+
+        <h3 id="m111-nosql-intro">1. Découvrir les bases de données NoSQL</h3>
+        <ul>
+            <li>
+                <h4>Définition des SGBD Relationnels (SGBDR) :</h4>
+                <p>Adaptés à la gestion de données structurées en tables, utilisant ACID pour la cohérence transactionnelle. Leurs limites sont visibles face aux volumes massifs et à la rigidité du schéma.</p>
+            </li>
+            <li>
+                <h4>Définition des BD NoSQL ("Not Only SQL") :</h4>
+                <p>Technologies de bases de données flexibles qui ne suivent pas forcément le modèle relationnel. Elles gèrent divers types de données et privilégient la distribution en relâchant certaines contraintes de cohérence.</p>
+                <ul>
+                    <li><strong>Avantages :</strong> Format simple (clé-valeur), stockage direct d'objets, open-source, scalabilité horizontale facile, regroupement de données par unités logiques évitant les jointures.</li>
+                    <li><strong>Inconvénients :</strong> Absence de clé étrangère (cohérence à gérer par programmation), non adapté aux transactions bancaires, requêtes incompatibles avec SQL.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Comparaison entre BD traditionnelles (SQL) et NoSQL :</h4>
+                <p>SQL utilise des tables, un schéma strict et une scalabilité verticale (mise à l'échelle sur un seul serveur). NoSQL utilise des collections (clé-valeur, documents, graphes), un schéma flexible et une scalabilité horizontale (ajout de serveurs). NoSQL privilégie la Disponibilité et la Tolérance au Partitionnement (AP) selon le Théorème de CAP, et repose sur les propriétés BASE.</p>
+            </li>
+            <li>
+                <h4>Caractéristiques générales des bases NoSQL :</h4>
+                <p>Modèle sans schéma (Schema Free), architecture distribuée, privilégient BASE (Basically Available, Soft State, Eventually Consistent) au lieu d'ACID, utilisent des langages non-SQL, gèrent des structures complexes et des volumes exponentiels de données.</p>
+            </li>
+            <li>
+                <h4>Types de bases de données NoSQL :</h4>
+                <ul>
+                    <li><strong>Clé-Valeur :</strong> Le plus simple, paires (clé/valeur). Ex: DynamoDB, Berkeley DB.</li>
+                    <li><strong>Orientées Document :</strong> Évolution du clé/valeur, la valeur est un document JSON/XML à structure libre, évite les jointures. Ex: MongoDB, CouchDB, Cassandra.</li>
+                    <li><strong>Orientées Colonne :</strong> Focalise les requêtes sur les colonnes, adaptée aux calculs analytiques. Ex: BigTable DB, HBase.</li>
+                    <li><strong>Orientées Graphe :</strong> Basées sur la théorie des graphes, pour données fortement interconnectées. Ex: Neo4j.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m111-mongodb-setup">2. Mettre en place une base de données MongoDB</h3>
+        <ul>
+            <li>
+                <h4>Création d'une base de données :</h4>
+                <p>Commande <code>use &lt;nom_base_de_données&gt;</code> pour créer ou basculer. La BD est créée quand le premier document est inséré.</p>
+            </li>
+            <li>
+                <h4>Création d'une collection de documents :</h4>
+                <p>Une collection est un ensemble de documents (équivalent à une table sans schéma strict). Un document est l'unité de base (objet JSON) et a un <code>_id</code> obligatoire.</p>
+            </li>
+            <li>
+                <h4>Suppression :</h4>
+                <ul>
+                    <li><code>db.&lt;nomcollection&gt;.drop()</code> : Supprimer une collection.</li>
+                    <li><code>db.dropDatabase()</code> : Supprimer la base de données courante.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m111-mongodb-modeling">3. Modéliser les documents</h3>
+        <ul>
+            <li>
+                <h4>Structure d'un document JSON :</h4>
+                <p>JSON est un format texte léger (clé/valeur) pour structurer et transmettre des données. Supporte types primitifs (nombre, booléen, chaîne, null), objets et tableaux. Un document JSON valide est un objet ou un tableau.</p>
+            </li>
+            <li>
+                <h4>Modélisation MongoDB vs BDR :</h4>
+                <p>BDR utilise la normalisation pour éviter la redondance et s'appuie sur des jointures. MongoDB utilise la dénormalisation (documents intégrés) pour améliorer les performances de recherche, acceptant des données redondantes et des attributs non atomiques. Le schéma est flexible et dépend des requêtes de l'application.</p>
+            </li>
+            <li>
+                <h4>Modélisation des liens :</h4>
+                <ul>
+                    <li><strong>Relations d'enchâssement (Embedding) :</strong> Imbriquer un document dans un autre pour éviter les jointures. Convient aux petits documents (<16 Mo) et aux contextes privilégiant la lecture.</li>
+                    <li><strong>Relations de liaisons (Linking) :</strong> Dupliquer l'identifiant d'un document dans un autre (comme les clés étrangères). Préféré pour les relations plusieurs-à-plusieurs ou quand les documents sont grands.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Espaces de nom, Collections et types de données :</h4>
+                <p>Un <strong>espace de nom</strong> est <code>&lt;nom_base_de_données&gt;.&lt;nom_collection&gt;</code>. Les documents sont stockés en <strong>BSON</strong> (format binaire de JSON), supportant <code>String</code>, <code>Integer</code>, <code>Double</code>, <code>Boolean</code>, <code>Date</code>, <code>Null</code>, <code>Données binaires</code>, <code>Array</code>, et <code>ObjectId</code>.</p>
+            </li>
+        </ul>
+
+        <h3 id="m111-mongodb-manipulation">4. Manipuler les données avec MongoDB</h3>
+        <ul>
+            <li>
+                <h4>Requêtes de base CRUD :</h4>
+                <ul>
+                    <li><strong>Insérer :</strong> <code>db.collection.insert()</code>, <code>db.collection.insertOne()</code>.</li>
+                    <li><strong>Supprimer :</strong> <code>db.collection.deleteOne()</code>, <code>db.collection.deleteMany()</code>.</li>
+                    <li><strong>Remplacer/Modifier :</strong> <code>db.collection.update()</code>, <code>db.collection.updateMany()</code> (souvent avec <code>$set</code>).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Recherche de l'information :</h4>
+                <ul>
+                    <li><strong>Sélection :</strong> <code>db.collection.find()</code> (tous), <code>db.collection.findOne()</code> (le premier).</li>
+                    <li><strong>Restriction :</strong> Filtrer avec un document JSON de conditions.</li>
+                    <li><strong>Projection :</strong> Limiter les champs retournés.</li>
+                    <li><strong><code>distinct()</code> :</strong> Lister les valeurs uniques d'un champ.</li>
+                    <li><strong><code>count()</code> :</strong> Compter les documents.</li>
+                    <li><strong><code>limit(n)</code> :</strong> Limiter le nombre de résultats.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Opérateurs de recherche :</h4>
+                <ul>
+                    <li><strong>Comparaison :</strong> <code>$eq</code>, <code>$gt</code>, <code>$gte</code>, <code>$lt</code>, <code>$lte</code>, <code>$ne</code>.</li>
+                    <li><strong>Listes :</strong> <code>$in</code>, <code>$nin</code>.</li>
+                    <li><strong>Logiques :</strong> <code>$and</code>, <code>$or</code>, <code>$nor</code>.</li>
+                    <li><strong>Existence :</strong> <code>$exists</code>.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Agrégation (`aggregate()`) :</h4>
+                <p>Effectue des calculs et regroupements via un pipeline d'opérations (<code>$match</code>, <code>$group</code> avec <code>$sum</code>, <code>$avg</code>, <code>$min</code>, <code>$max</code>, <code>$sort</code>).</p>
+            </li>
+            <li>
+                <h4>Tri des documents (`sort()`) :</h4>
+                <p>Trier les résultats avec <code>1</code> pour ascendant, <code>-1</code> pour descendant.</p>
+            </li>
+            <li>
+                <h4>Requêtes depuis programmes Python (PyMongo) :</h4>
+                <p>PyMongo est la librairie officielle. Installation : <code>pip install pymongo</code>. Connexion via <code>MongoClient</code>. Utilise une syntaxe similaire au shell MongoDB. Les requêtes <code>find()</code> retournent un curseur.</p>
+            </li>
+        </ul>
+
+        <h3 id="m111-mongodb-security">5. Sécuriser une base de données MongoDB</h3>
+        <ul>
+            <li>
+                <h4>Import / Export des données :</h4>
+                <p><code>mongoexport</code> (vers JSON/CSV) et <code>mongoimport</code> (depuis JSON/CSV).</p>
+            </li>
+            <li>
+                <h4>Sécurité des accès (authentification) :</h4>
+                <p>Création d'utilisateurs (<code>db.createUser()</code>) avec login, mot de passe et rôles (<code>dbAdmin</code>, <code>readWrite</code>, etc.). Authentification via <code>db.auth()</code>.</p>
+            </li>
+        </ul>
+
+        <!-- Module: Gérer les données (M111) - Partie 1 (MySQL) -->
+        <h2 id="m111-data-mysql">M111 – Gérer les données (Partie 1 - MySQL)</h2>
+
+        <h3 id="m111-mysql-procedural">1. Maîtriser le langage de programmation procédurale sous MySQL</h3>
+        <ul>
+            <li>
+                <h4>SQL (Langage de Définition de Données - DDL) :</h4>
+                <ul>
+                    <li><strong>Création/Suppression de BD :</strong> <code>CREATE DATABASE</code>, <code>DROP DATABASE</code>.</li>
+                    <li><strong>Création/Suppression/Modification de Table :</strong> <code>CREATE TABLE</code>, <code>DROP TABLE</code>, <code>ALTER TABLE</code> (ajouter/supprimer/modifier colonnes, contraintes).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>SQL (Langage d'Interrogation de Données - DQL) :</h4>
+                <ul>
+                    <li><strong>Sélection :</strong> <code>SELECT</code> (avec <code>DISTINCT</code>, <code>WHERE</code>, <code>GROUP BY</code>, <code>HAVING</code>, <code>ORDER BY</code>, <code>LIMIT</code>).</li>
+                    <li><strong>Vues :</strong> Objets qui enregistrent une requête sous forme de table (<code>CREATE VIEW</code>).</li>
+                    <li><strong>Tables temporaires :</strong> Stockent des résultats temporaires pour une session (<code>CREATE TEMPORARY TABLE</code>).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>SQL (Langage de Manipulation de Données - DML) :</h4>
+                <ul>
+                    <li><strong>Insertion :</strong> <code>INSERT INTO</code>.</li>
+                    <li><strong>Modification :</strong> <code>UPDATE ... SET ... WHERE</code>.</li>
+                    <li><strong>Suppression :</strong> <code>DELETE FROM ... WHERE</code>.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Langage de programmation procédural de MySQL :</h4>
+                <ul>
+                    <li><strong>Structures de contrôle :</strong> <code>IF/ELSEIF/ELSE</code>, <code>CASE</code> (avec/sans sélecteur), <code>LOOP</code> (avec <code>LEAVE</code>, <code>ITERATE</code>), <code>WHILE</code>, <code>REPEAT</code>.</li>
+                    <li><strong>Variables :</strong> Scalaires (<code>DECLARE</code>, portée limitée au bloc), de session (<code>@nom_variable</code>, spécifiques à la session).</li>
+                    <li><strong>Verrouillage des tables :</strong> <code>LOCK TABLES nom_table [READ | WRITE]</code>, <code>UNLOCK TABLES</code>.</li>
+                    <li><strong>Transactions :</strong> Regrouper des opérations DML (<code>BEGIN</code>/<code>START TRANSACTION</code>, <code>COMMIT</code>, <code>ROLLBACK</code>). Auto-commit peut être désactivé.</li>
+                    <li><strong>Évènements programmés (Events) :</strong> Tâches exécutées selon un calendrier.</li>
+                    <li><strong>Gestion des exceptions :</strong> <code>DECLARE HANDLER</code> (<code>CONTINUE</code>/<code>EXIT</code>) pour codes d'erreur (`SQLSTATE`, `SQLWARNING`, `NOT FOUND`, `SQLEXCEPTION`). Instructions <code>SIGNAL</code> et <code>RESIGNAL</code> pour lever/relayer des conditions d'erreur.</li>
+                    <li><strong>Curseurs :</strong> Zone mémoire côté serveur pour traiter ligne par ligne un résultat de SELECT (<code>DECLARE CURSOR</code>, <code>OPEN</code>, <code>FETCH</code>, <code>CLOSE</code>). La clause <code>FOR UPDATE</code> verrouille les lignes pour modification.</li>
+                    <li><strong>Fonctions :</strong> Retournent une seule valeur (<code>CREATE FUNCTION</code>).</li>
+                    <li><strong>Procédures Stockées :</strong> Stockent un ensemble de requêtes SQL (<code>CREATE PROCEDURE</code>, exécutées par <code>CALL</code>). Supportent les paramètres <code>IN</code>, <code>OUT</code>, <code>INOUT</code>.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m111-mysql-optimize">2. Optimiser une base de données MySQL</h3>
+        <ul>
+            <li>
+                <h4>Optimiser les requêtes SQL :</h4>
+                <p>Éviter <code>SELECT *</code>, utiliser <code>WHERE EXISTS</code> au lieu de <code>IN</code>, éviter les fonctions dans les prédicats, éviter <code>%</code> au début des <code>LIKE</code>, préférer <code>INNER JOIN</code>, n'utiliser <code>DISTINCT</code>/<code>UNION</code>/<code>ORDER BY</code> que si nécessaire, éviter les requêtes dans les boucles (problème N+1), utiliser requêtes préparées/procédures stockées, analyser avec <code>EXPLAIN</code>.</p>
+            </li>
+            <li>
+                <h4>Optimiser la structure de la base de données (Les Index) :</h4>
+                <p>Un index accélère l'accès aux données. Types : <code>PRIMARY KEY</code>, <code>UNIQUE</code>, <code>FULLTEXT</code>, <code>SPATIAL</code>. Création avec <code>ALTER TABLE ... ADD INDEX</code> ou <code>CREATE INDEX</code>. Suppression avec <code>DROP INDEX</code>. Stratégie d'indexation : clé primaire, colonnes fréquemment interrogées, fonctions agrégées, index uniques pour jointures.</p>
+            </li>
+            <li>
+                <h4>Optimiser la configuration de serveur MySQL :</h4>
+                <p>Utiliser SSD, ajuster le cache mémoire, préférer <code>InnoDB</code> à <code>MyISAM</code>, utiliser la dernière version de MySQL, envisager des outils d'optimisation automatique.</p>
+            </li>
+        </ul>
+
+        <h3 id="m111-mysql-protect">3. Protéger la base de données MySQL</h3>
+        <ul>
+            <li>
+                <h4>Sécurité générale du serveur :</h4>
+                <p>Vise à préserver la confidentialité, l'intégrité et la disponibilité des BD, du SGBD, des applications et de l'infrastructure.</p>
+            </li>
+            <li>
+                <h4>Règles de sécurité et droits d'accès au serveur MySQL :</h4>
+                <p>Sécuriser serveurs physiques, utiliser BD séparées, proxy HTTPS, chiffrement. Effectuer des <strong>sauvegardes régulières</strong> (<code>mysqldump</code>) et savoir restaurer. Mettre à jour applications, authentification forte, rôles de sécurité, éviter ports par défaut.</p>
+            </li>
+            <li>
+                <h4>Gestion des comptes utilisateurs :</h4>
+                <ul>
+                    <li><strong>Création :</strong> <code>CREATE USER 'login'@'hote'</code>.</li>
+                    <li><strong>Modification :</strong> <code>RENAME USER</code>, <code>SET PASSWORD FOR</code>.</li>
+                    <li><strong>Suppression :</strong> <code>DROP USER</code>.</li>
+                    <li><strong>Privilèges :</strong> <code>GRANT privilege ON niveau_privilege TO utilisateur</code>. <code>REVOKE privilege FROM utilisateur</code>.</li>
+                    <li><strong>Rôles :</strong> Créer des rôles (<code>CREATE ROLE</code>), leur attribuer des privilèges, puis assigner des rôles aux utilisateurs.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Module: Préparer un projet web (M109) - Partie 1 -->
+        <h2 id="m109-prepare-web-project">M109 – Préparer un projet web (Partie 1)</h2>
+
+        <h3 id="m109-web-project-modeling">1. Modéliser un projet web</h3>
+        <ul>
+            <li>
+                <h4>Introduction :</h4>
+                <p>La modélisation est une représentation abstraite d'un système, facilitant son étude, documentation, communication et traçabilité.</p>
+            </li>
+            <li>
+                <h4>Projet web :</h4>
+                <p>Projet informatique dont les livrables sont destinés à Internet. Doit répondre à des besoins précis, mobiliser des ressources, respecter budget et calendrier. A des objectifs (notoriété, visibilité, etc.) et diverses catégories (Internet, extranet, mobile, etc.).</p>
+            </li>
+            <li>
+                <h4>Cycle de vie d'un projet web :</h4>
+                <p>Décrit le processus complet du projet (cadrage, planification, réalisation, clôture).</p>
+                <ul>
+                    <li><strong>Modèles :</strong> Modèle en cascade (linéaire, séquentiel, sans retour), Modèle en V (associe phases de conception/réalisation à phases de validation, création de dossiers de tests).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Analyse des besoins :</h4>
+                <p>Établir des objectifs et besoins clairs dans un cahier des charges. Inclut spécifications opérationnelles, utilisateurs, fonctionnelles, qualitatives.</p>
+                <ul>
+                    <li><strong>Cahier des charges web :</strong> Document clé, contractuel, rédigé par la MOA pour la MOE.</li>
+                    <li><strong>Interventions :</strong> Analyse des besoins métiers (back-office, feuille de route, périmètre), analyse des besoins des utilisateurs (front-office, affiner les attentes), analyse fonctionnelle (orientée solutions, données d'entrée/sortie).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Conception :</h4>
+                <p>Phase où l'on décide des solutions techniques et fonctionnelles.</p>
+                <ul>
+                    <li><strong>Conception fonctionnelle :</strong> Structuration du contenu (hiérarchique, séquentielle, réseau), navigation du site, spécifications fonctionnelles détaillées (SFD).</li>
+                    <li><strong>Conception graphique :</strong> Définition des éléments visuels (gabarit, maquettes, charte graphique).</li>
+                    <li><strong>Conception technique :</strong> Choix techniques/technologiques (architecture logicielle - MVC, micro-services, BD; architecture matérielle; CMS; sécurité; spécifications techniques).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Développement :</h4>
+                <p>Phase de réalisation (technique, graphique, éditoriale).</p>
+                <ul>
+                    <li><strong>Réalisation technique :</strong> Infrastructure, bases de données, développement/codage (front-end, back-end), intégration de l'existant.</li>
+                    <li><strong>Réalisation graphique :</strong> Choix et optimisation des visuels (images, couleurs) pour l'esthétique et le référencement.</li>
+                    <li><strong>Réalisation éditoriale :</strong> Animation du site, traductions, textes statiques.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Tests et déploiement :</h4>
+                <p>Visent à assurer la qualité et la mise en ligne du site.</p>
+                <ul>
+                    <li><strong>Tests :</strong> Détecter bugs, assurer qualité. Niveaux : unitaires, d'intégration, système, de recette. Types : fonctionnels, non fonctionnels (robustesse, performance, ergonomie, sécurité).</li>
+                    <li><strong>Déploiement :</strong> Installer/mettre à jour le site sur un environnement de production.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Maintenance et évolutivité :</h4>
+                <p>Entretien régulier du site (technique et contenu) pour garantir performance et référencement.</p>
+            </li>
+        </ul>
+
+        <h3 id="m109-use-case-diagram">2. Modéliser les besoins client par un diagramme de cas d'utilisation</h3>
+        <ul>
+            <li>
+                <h4>Introduction au langage de modélisation UML :</h4>
+                <p><strong>Modélisation :</strong> Représentation abstraite d'un système pour faciliter l'étude. <strong>UML (Unified Modeling Language) :</strong> Langage visuel standard pour spécifier, construire et documenter un système d'information, avec divers types de diagrammes.</p>
+            </li>
+            <li>
+                <h4>Définition du diagramme des cas d'utilisation (DCU) :</h4>
+                <p>Décrit les interactions fonctionnelles entre les acteurs et le système, montrant la vision utilisateur des fonctionnalités. Démarche : identifier acteurs, cas d'utilisation, relations.</p>
+            </li>
+            <li>
+                <h4>Acteurs :</h4>
+                <p>Rôle joué par une entité externe (utilisateur, matériel, autre système) interagissant avec le système. <strong>Acteur principal :</strong> bénéficiaire du résultat. <strong>Acteur secondaire :</strong> participant (sollicité pour info).</p>
+            </li>
+            <li>
+                <h4>Cas d'utilisation :</h4>
+                <p>Ensemble d'actions du système produisant un résultat intéressant pour un acteur. Modélise un service. Nommé par verbe à l'infinitif + complément.</p>
+            </li>
+            <li>
+                <h4>Relation entre acteurs et cas d'utilisation :</h4>
+                <p><strong>Association :</strong> Relie acteurs et CU, signifie "participe à". Peut inclure une multiplicité (nombre d'interactions).</p>
+            </li>
+            <li>
+                <h4>Relation entre cas d'utilisation :</h4>
+                <ul>
+                    <li><strong>Inclusion (<code>&lt;&lt;include&gt;&gt;</code>) :</strong> Un CU de base incorpore explicitement et obligatoirement un autre CU (fonctionnalité commune).</li>
+                    <li><strong>Extension (<code>&lt;&lt;extend&gt;&gt;</code>) :</strong> Un CU de base peut être complété optionnellement par un autre CU sous condition, à un "point d'extension".</li>
+                    <li><strong>Généralisation/Spécialisation :</strong>
+                        <ul>
+                            <li><strong>Entre acteurs :</strong> Un acteur généralisé modélise les aspects communs à plusieurs acteurs concrets.</li>
+                            <li><strong>Entre cas d'utilisation :</strong> Un CU est une spécialisation d'un autre (cas particulier).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>Description textuelle des cas d'utilisation :</h4>
+                <p>Documente en détail un CU. Comprend : Identification (nom, objectif, acteurs), Description des scénarios (pré-conditions, scénario nominal, alternatifs, d'exception, post-conditions), Exigences non fonctionnelles (performance, sécurité, ergonomie).</p>
+            </li>
+        </ul>
+
+        <h3 id="m109-class-diagram">3. Modéliser les données du projet par un diagramme de classes</h3>
+        <ul>
+            <li>
+                <h4>Définition du diagramme de classes :</h4>
+                <p>Diagramme UML le plus important, représente la structure statique du système via des classes et leurs relations. Permet une vue abstraite des objets.</p>
+                <ul>
+                    <li><strong>Objet :</strong> État (attributs), comportement (opérations), identité (unique).</li>
+                    <li><strong>Classe :</strong> Représentation abstraite d'objets, modèle pour leur construction. Peut être <strong>concrète</strong> (instanciable) ou <strong>abstraite</strong> (non instanciable directement, factorise des éléments). Les <strong>interfaces</strong> sont des classes particulières sans attributs, avec des opérations non définies.</li>
+                    <li><strong>Représentation graphique UML :</strong> Rectangle avec 3 compartiments (nom, attributs, opérations).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Visibilité et encapsulation :</h4>
+                <ul>
+                    <li><strong>Encapsulation :</strong> Rassemble données et méthodes pour protéger l'intégrité des données, avec accès via des services (interface).</li>
+                    <li><strong>Visibilité :</strong> Niveaux d'accès aux éléments (attributs/méthodes) : <code>+</code> (public), <code>#</code> (protected), <code>-</code> (private), <code>~</code> (package).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Attributs et méthodes d'instance :</h4>
+                <ul>
+                    <li><strong>Attributs :</strong> Déclarés avec visibilité, nom, type, multiplicité (<code>[0..1]</code>, <code>[*]</code>), contraintes (<code>{readOnly}</code>, <code>{not null}</code>) et valeur par défaut.</li>
+                    <li><strong>Méthodes :</strong> Opérations avec visibilité, nom, paramètres (type et direction : <code>in</code>, <code>out</code>, <code>inout</code>), type de retour. Peuvent être surchargées.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Attributs et méthodes de classe (statiques) :</h4>
+                <p>Propriétés et comportements propres à la classe, accessibles sans instance, soulignés graphiquement.</p>
+            </li>
+            <li>
+                <h4>Contraintes :</h4>
+                <p>Conditions entre accolades (<code>{}</code>) appliquées sur attributs/méthodes.</p>
+            </li>
+            <li>
+                <h4>Attributs calculés (dérivés) :</h4>
+                <p>Valeur calculée à partir d'autres informations, noté <code>/nom_attribut</code>.</p>
+            </li>
+            <li>
+                <h4>Multiplicité (cardinalité) :</h4>
+                <p>Nombre de valeurs qu'un attribut ou paramètre peut contenir (ex: <code>0..*</code>, <code>1..1</code>).</p>
+            </li>
+            <li>
+                <h4>Constructeur et destructeurs :</h4>
+                <p>Méthodes spéciales stéréotypées <code>&lt;&lt;create&gt;&gt;</code> et <code>&lt;&lt;destroy&gt;&gt;</code>, pour la création et destruction d'objets.</p>
+            </li>
+            <li>
+                <h4>Modèles de classe (templates) :</h4>
+                <p>Classes paramétrées pour choisir le type des attributs, utiles pour les collections.</p>
+            </li>
+            <li>
+                <h4>Relations entre classes :</h4>
+                <ul>
+                    <li><strong>Dépendance :</strong> Relation faible, une classe utilise brièvement des objets d'une autre (trait discontinu, <code>&lt;&lt;use&gt;&gt;</code>).</li>
+                    <li><strong>Associations :</strong> Relation plus forte, les classes sont liées pendant un temps (trait continu). Peuvent être binaires, réflexives, n-aires. Définissent rôle, multiplicité, navigabilité.</li>
+                    <li><strong>Composition :</strong> Relation très forte, un objet A est constitué d'un objet B, B n'existe que par A (losange plein).</li>
+                    <li><strong>Agrégation :</strong> Un objet A possède B, mais B peut exister indépendamment (losange vide).</li>
+                    <li><strong>Héritage :</strong> Une classe fille est une spécialisation d'une classe mère, héritant ses propriétés (triangle vide).</li>
+                    <li><strong>Réalisation :</strong> Une classe implémente une interface, elle s'engage à définir les méthodes de l'interface (trait discontinu avec flèche triangulaire).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m109-sequence-diagram">4. Modéliser les interactions d’objets d’un système à l’aide d’un diagramme de séquence</h3>
+        <ul>
+            <li>
+                <h4>Rôle du Diagramme de Séquence (DS) :</h4>
+                <p>Décrit comment les éléments du système interagissent et échangent des messages au fil du temps. Il dynamise la modélisation UML.</p>
+            </li>
+            <li>
+                <h4>Types de Diagrammes de Séquence :</h4>
+                <ul>
+                    <li><strong>DS Boîte Noire (DSS) :</strong> Interactions entre acteurs et système (vu de l'extérieur) dans le cadre d'un cas d'utilisation.</li>
+                    <li><strong>DS Boîte Blanche (Diagramme d'Interaction) :</strong> Interactions entre objets à l'intérieur du système, pour attribuer des responsabilités aux classes.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Délimitation du Diagramme de Séquence :</h4>
+                <p>Comprend : <strong>Objets</strong> (instances de classes), <strong>Lignes de vie</strong> (axe temporel vertical de l'objet, montrant l'activité), <strong>Messages</strong> (communications entre lignes de vie).</p>
+            </li>
+            <li>
+                <h4>Types de messages :</h4>
+                <ul>
+                    <li><strong>Messages asynchrones :</strong> L'expéditeur n'attend pas de réponse (flèche simple, trait plein). Peut être un appel de méthode ou un signal.</li>
+                    <li><strong>Messages synchrones :</strong> L'expéditeur est bloqué et attend une réponse du destinataire (flèche pleine, trait plein, peut être suivi d'une réponse en pointillé).</li>
+                    <li><strong>Messages perdus et trouvés :</strong> Perdu (émetteur connu, récepteur inconnu), trouvé (destinataire connu, émetteur inconnu).</li>
+                    <li><strong>Messages de création et destruction d'instance :</strong> Création par appel de constructeur (stéréotype <code>&lt;&lt;create&gt;&gt;</code>), destruction par une croix en fin de ligne de vie (stéréotype <code>&lt;&lt;destroy&gt;&gt;</code>).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Fragments d’interactions combinés :</h4>
+                <p>Parties du diagramme délimitées par un rectangle avec un opérateur d'interaction qui décrit des modalités d'exécution des messages à l'intérieur. Les opérandes sont séparées par une ligne pointillée et peuvent avoir des conditions entre crochets <code>[]</code>.</p>
+                <ul>
+                    <li><strong>Opérateurs :</strong> <code>opt</code> (option), <code>alt</code> (alternative), <code>loop</code> (boucle), <code>par</code> (parallèle), <code>break</code> (interruption), <code>ignore</code> (omission), <code>assert</code> (affirmation, séquence unique possible).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Module: Préparer un projet web (M109) - Partie 2 -->
+        <h2 id="m109-prepare-web-project-part2">M109 – Préparer un projet web (Partie 2)</h2>
+        <h3 id="m109-mockup">1. Créer une maquette pour le développement web</h3>
+        <ul>
+            <li>
+                <h4>Principes de l'UX Design :</h4>
+                <p>L'UX (User Experience) Design analyse les attentes et besoins de l'utilisateur pour offrir une expérience agréable et intuitive. L'UX est la partie invisible de l'expérience, tandis que l'UI (User Interface) est la partie visible (couleurs, typographies). L'<strong>usabilité</strong> (capacité d'un utilisateur à utiliser un produit efficacement, avec efficience et satisfaction) est une composante de l'UX. L'<strong>affordance</strong> est la capacité d'un objet à évoquer son utilisation. La méthode des <strong>personas</strong> crée des archétypes d'utilisateurs. Les <strong>lois de l'UX Design</strong> (Fitts, Hick, Jakob, Miller, Parkinson, Tesler, Von Restroff, Zeigarnik, Prägnanz, Postel, etc.) guident la conception. L'<strong>Inclusive Design</strong> vise l'accessibilité numérique pour tous les utilisateurs (auditif, visuel, cognitif, moteur) via des sites accessibles au clavier et avec un contraste de couleurs suffisant.</p>
+            </li>
+            <li>
+                <h4>Critères ergonomiques de l'UI Design (Bastien et Scapin) :</h4>
+                <p>Règles générales pour la conception graphique centrée utilisateur :</p>
+                <ul>
+                    <li><strong>Le guidage :</strong> Conseiller, informer et conduire l'utilisateur (lisibilité, vocabulaire, indications visuelles).</li>
+                    <li><strong>La charge de travail :</strong> Réduire au minimum les efforts de l'utilisateur.</li>
+                    <li><strong>Contrôle explicite de l'utilisateur :</strong> L'utilisateur a le contrôle et la liberté d'action.</li>
+                    <li><strong>Adaptabilité :</strong> Prendre en compte les habitudes et l'expérience des utilisateurs.</li>
+                    <li><strong>Gestion des erreurs :</strong> Protéger l'utilisateur des erreurs, informer et proposer des corrections.</li>
+                    <li><strong>Homogénéité et cohérence :</strong> Choix graphiques et interactifs cohérents d'un contexte à l'autre.</li>
+                    <li><strong>Signifiance des codes et dénominations :</strong> Vocabulaire et langage graphique explicites et cohérents.</li>
+                    <li><strong>Compatibilité et accessibilité :</strong> Conception en fonction des caractéristiques de l'utilisateur et du support.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Wireframes :</h4>
+                <ul>
+                    <li><strong>Zoning :</strong> Schématisation grossière de la page web avec des blocs pour situer les contenus et fonctionnalités, souvent en nuances de gris. Peut être fait sur papier ou ordinateur.</li>
+                    <li><strong>Wireframe ("maquette fil de fer") :</strong> Suite du zoning, ajoute des éléments représentatifs du contenu (texte fictif, croix pour images) pour positionner précisément et donner une taille en pixel. Toujours en nuances de gris. Avantages : optimise la conception sans distraction visuelle, montre l'interface en taille réelle, rapide à réaliser, flexible.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Mockups :</h4>
+                <ul>
+                    <li><strong>Charte graphique :</strong> Document clé définissant l'identité visuelle de la marque/site (logotype, couleurs, polices, motifs, icônes, illustrations). Objectifs : cibler public, définir ton graphique, se démarquer.</li>
+                    <li><strong>Moodboards :</strong> Planche d'ambiance ou tableau d'inspiration regroupant visuels, typographies pour faire émerger une ligne créative.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Prototypes :</h4>
+                <p>Permettent d'animer les maquettes statiques pour avoir un aperçu des interactions, partager des idées, obtenir des retours utilisateurs. Figma est un outil collaboratif qui permet la mise à jour en temps réel des éléments visuels. <strong>FigJam</strong> est un outil de collaboration pour le brainstorming et les ateliers UX.</p>
+            </li>
+        </ul>
+
+        <!-- Module: Adopter l'approche agile (M110) -->
+        <h2 id="m110-agile">M110 – Adopter l'approche Agile</h2>
+
+        <h3 id="m110-project-management-fundamentals">1. Connaître les fondamentaux de la gestion de projet</h3>
+        <ul>
+            <li>
+                <h4>Concepts de gestion de projet :</h4>
+                <p>Un <strong>projet</strong> est un effort ponctuel et coordonné pour atteindre un objectif unique dans des délais fixés, mobilisant des ressources identifiées et ayant un coût. La <strong>gestion de projet</strong> organise ce processus. Un <strong>livrable</strong> est le résultat tangible attendu. Une <strong>charte de projet</strong> est un document formel décrivant le projet.</p>
+            </li>
+            <li>
+                <h4>Parties prenantes de projet :</h4>
+                <p>Ensemble des personnes et organisations ayant un intérêt dans le projet, directement impliquées ou impactées. Peuvent être internes (commanditaire, sponsor, direction, équipe projet) ou externes (clients, fournisseurs, organismes publics/privés, investisseurs).</p>
+            </li>
+            <li>
+                <h4>Principaux rôles dans un projet informatique :</h4>
+                <p>Le <strong>Chef de projet informatique (CPI)</strong> garantit l'avancement du projet, gère les ressources et les contraintes. La <strong>matrice RACI</strong> (Responsible, Accountable, Consulted, Informed) attribue les responsabilités pour les tâches/livrables.</p>
+            </li>
+            <li>
+                <h4>Caractéristiques de base d'un projet :</h4>
+                <p>Objectifs clairement définis, limite dans le temps (début et fin), activités (actions transformant les ressources en résultats), ressources (humaines, matérielles, financières, temps), résultats attendus (biens/services, mènent à l'objectif).</p>
+            </li>
+            <li>
+                <h4>Contraintes dans la gestion d'un projet :</h4>
+                <p>Limites générales du projet. Types : <strong>délais</strong> (temporelles, externes), <strong>coûts</strong> (budget, rentabilité), <strong>qualité</strong> (impératifs légaux, commerciaux). Leur identification est cruciale pour la performance du projet.</p>
+            </li>
+            <li>
+                <h4>Méthodes prévisibles (cascades, V, Y) :</h4>
+                <p>Reposent sur une organisation stricte et séquentielle. Le <strong>modèle en cascade (Waterfall)</strong> est linéaire, chaque phase dépend de la précédente sans retour en arrière. Le <strong>cycle en V</strong> est une méthode en V associant phases de conception/réalisation à phases de validation. Le <strong>cycle en Y (2TUP)</strong> décompose le système suivant un axe fonctionnel et un axe technique. Ces méthodes sont rigides mais précises. Le principal inconvénient du cycle en V est l'<strong>effet tunnel</strong> (difficulté à gérer les changements en cours de projet).</p>
+            </li>
+            <li>
+                <h4>Méthodes imprévisibles (Agile) :</h4>
+                <p>Découpent le projet en sous-parties autonomes (développement itératif). Les 4 valeurs agiles sont : individus et interactions, logiciels opérationnels, collaboration client, adaptation au changement. Elles sont plus flexibles et réactives.</p>
+            </li>
+            <li>
+                <h4>Cycle en V vs. Méthodes agiles :</h4>
+                <p>Le cycle en V se focalise sur le processus, les méthodes agiles privilégient le produit. Les méthodes agiles sont incrémentales, le produit s'affine par itérations.</p>
+            </li>
+        </ul>
+
+        <h3 id="m110-plan-project">2. Planifier un projet</h3>
+        <ul>
+            <li>
+                <h4>Analyser le cahier des charges :</h4>
+                <p>Comprendre les besoins client (explicites et implicites), le contexte du projet (informations caractérisant le projet et son environnement), le périmètre du projet (ce qui est inclus/exclu, pour limiter les dérives), détecter les risques (financiers, humains, temporels, techniques, juridiques, environnementaux, organisationnels) et proposer des solutions possibles (diagramme de Gantt pour visibilité, objectifs clairs, planning précis, gestion des ressources, bonne communication).</p>
+            </li>
+            <li>
+                <h4>Préparer le projet :</h4>
+                <ul>
+                    <li><strong>Répartition des fonctionnalités en tâches :</strong> Décomposition hiérarchique du travail (approches descendante, ascendante, combinée).</li>
+                    <li><strong>Estimation de la durée de chaque tâche :</strong> Basée sur données historiques, analyse statistique, durée moyenne (DM = (Do + Dp + 4Dc) / 6).</li>
+                    <li><strong>Ordonnancement des tâches :</strong> Utilise des méthodes comme MPM (Méthode des Potentiels et antécédents Métra) ou le diagramme de Gantt pour représenter les tâches et leurs dépendances.</li>
+                    <li><strong>Chemin critique (CPM) :</strong> La séquence la plus longue de tâches sans marge de retard, détermine la durée minimale du projet.</li>
+                    <li><strong>Échéancier et chronologie des tâches :</strong> Visualise le plan du projet avec les étapes et échéances.</li>
+                    <li><strong>Affectation des ressources aux tâches :</strong> Processus d'affectation efficace des ressources disponibles (humaines, matérielles, financières, temps).</li>
+                    <li><strong>Maîtrise des coûts :</strong> Superviser et gérer les dépenses du projet, se préparer aux risques financiers (phases de faisabilité, avant-projet, réalisation).</li>
+                    <li><strong>Détermination des points de validation :</strong> Création d'un dossier de faisabilité (document descriptif des aspects techniques, qualité, financiers, calendaires).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m110-agile-scrum">3. Adopter l'approche Agile dans la gestion de projet</h3>
+        <ul>
+            <li>
+                <h4>Appréhender la méthodologie Agile Scrum :</h4>
+                <ul>
+                    <li><strong>Définition de Scrum :</strong> Méthode agile pour la gestion de projet, améliorant la productivité des équipes et l'optimisation du produit via des feedbacks réguliers et une réduction des bugs.</li>
+                    <li><strong>Manifeste Agile (valeurs et principes) :</strong> Déclaration fondatrice de l'agilité, basée sur 4 valeurs (individus/interactions, logiciels opérationnels, collaboration client, adaptation au changement) et 12 principes (livrer de la valeur, intégrer changements, livrer fréquemment, coopération, personnes motivées, dialogue face-à-face, mesurer avancement par produit opérationnel, rythme soutenable, excellence technique, minimiser travail inutile, équipes auto-organisées, amélioration continue).</li>
+                    <li><strong>Processus de Scrum :</strong>
+                        <ul>
+                            <li><strong>Pre-Game :</strong> Planification (création du backlog produit à partir des user stories) et architecture (conception haut niveau).</li>
+                            <li><strong>Game :</strong> Développement réel (tâches du sprint backlog), avec Daily Scrum (réunion quotidienne de 5-10 min sur avancement/problèmes).</li>
+                            <li><strong>Post-Game :</strong> Finalisation (tests, intégration, documentation, formation) et préparation du produit pour la sortie.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rôles et responsabilités :</strong>
+                        <ul>
+                            <li><strong>Scrum Master :</strong> Guide, assure le respect des principes Scrum, facilite, lève les obstacles.</li>
+                            <li><strong>Product Owner :</strong> Expert, collabore avec le client, définit/priorise les spécifications fonctionnelles (user stories), valide les fonctionnalités.</li>
+                            <li><strong>Équipe de Développement :</strong> Développeurs, auto-organisée, pluridisciplinaire.</li>
+                            <li><strong>Stakeholders (parties prenantes) :</strong> Toute personne ayant un intérêt direct dans le produit mais ne faisant pas partie de l'équipe Scrum.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Événements Scrum :</strong>
+                        <ul>
+                            <li><strong>Product Backlog :</strong> Liste priorisée des fonctionnalités.</li>
+                            <li><strong>Sprint :</strong> Cycle de développement court et répétitif (ex: 2 semaines).</li>
+                            <li><strong>Sprint Planning Meeting :</strong> Réunion avant chaque sprint pour sélectionner les exigences prioritaires du Product Backlog vers le Sprint Backlog.</li>
+                            <li><strong>Daily Scrum :</strong> Réunion quotidienne pour synchroniser l'équipe.</li>
+                            <li><strong>Sprint Review :</strong> Démo de fin de sprint au client/Product Owner.</li>
+                            <li><strong>Sprint Retrospective :</strong> Bilan d'équipe pour l'amélioration continue des pratiques.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Artéfacts Scrum :</strong> Product Backlog, Sprint Backlog, Incrément de produit (ce qui est réalisé à la fin d'un sprint).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Manipuler l'outil de gestion de projet Agile (Scrum/Jira) :</h4>
+                <ul>
+                    <li><strong>Présentation de Jira :</strong> Solution de gestion de projet d'Atlassian, utilisée par les équipes de développement logiciel pour organiser, communiquer et visualiser les projets (tableaux Kanban/Scrum). S'intègre avec les dépôts Git.</li>
+                    <li><strong>Tickets Jira :</strong> Unité de travail (Epic, Story, Tâche, Bug). Une Epic est un grand objectif divisé en tâches/stories. Un ticket suit un workflow (À Faire, En Cours, Terminé).</li>
+                    <li><strong>Projet Jira :</strong> Regroupe des tickets pour atteindre un objectif. Chaque projet a une clé unique (ex: WEB-1).</li>
+                    <li><strong>Backlog Jira :</strong> Liste des fonctionnalités ou éléments de travail (epics, tâches) avec leurs estimations (story points) et assignations.</li>
+                    <li><strong>Création de projet Scrum avec Jira :</strong> Se fait via l'interface web (Cloud) ou desktop.</li>
+                    <li><strong>Planification d'un sprint Jira :</strong> Les tickets sont déplacés du backlog vers le sprint, puis le sprint est démarré.</li>
+                    <li><strong>Tableau de bord du sprint Jira :</strong> Affiche l'état des tickets (À Faire, En Cours, Fini) et permet de suivre leur progression.</li>
+                    <li><strong>Feuille de route (Roadmap) Jira :</strong> Outil de planification à long terme pour les Epics, visualisant l'avancement sur plusieurs mois.</li>
+                    <li><strong>Génération des rapports Agile (Jira) :</strong> Jira offre divers rapports (délais, demandes créées, graphiques) et des tableaux de bord personnalisables avec des gadgets (Burndown, intégrité sprint, jours restants, ancienneté moyenne) pour une vision globale du projet et des tendances.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m110-vcs-quality">4. Mettre en œuvre des outils de gestion de versions et de mesure de la qualité du code</h3>
+        <ul>
+            <li>
+                <h4>Manipuler les outils de gestion de versions (Git/GitLab) :</h4>
+                <ul>
+                    <li><strong>Gestion de versions (VCS) :</strong> Stockage de multiples versions de fichiers pour tracer l'évolution chronologique des changements. Types : locale, centralisée, distribuée (combine locale et centrale). La gestion distribuée est clé pour l'open source.</li>
+                    <li><strong>Git :</strong> Logiciel libre de gestion de versions distribuée, multi-langages/plateformes. Chaque dépôt Git contient l'intégralité des données. Zones clés : Répertoire de travail, Index (staging area), HEAD.</li>
+                    <li><strong>Commandes Git :</strong>
+                        <ul>
+                            <li><code>git init</code> : Crée un dépôt vide.</li>
+                            <li><code>git status</code> : Affiche les différences.</li>
+                            <li><code>git add</code> : Ajoute fichiers à l'index.</li>
+                            <li><code>git commit</code> : Ajoute fichiers de l'index à HEAD.</li>
+                            <li><code>git clone</code> : Clone un dépôt.</li>
+                            <li><code>git pull</code> : Récupère et fusionne modifications distantes.</li>
+                            <li><code>git push</code> : Publie modifications locales vers dépôt distant.</li>
+                            <li><code>git checkout -b &lt;nom_branche&gt;</code> : Crée et bascule vers une branche.</li>
+                            <li><code>git merge &lt;branche&gt;</code> : Fusionne une branche dans la branche active.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Branches Git :</strong> Variantes d'un projet pour développer des fonctionnalités isolées. La branche `master` est par défaut.</li>
+                    <li><strong>Conflits de fusion :</strong> Surviennent lors de la fusion de branches modifiant la même partie d'un fichier. Git intègre les deux versions, le développeur doit résoudre manuellement.</li>
+                    <li><strong>GitLab :</strong> Plateforme open source collaborative de développement basée sur Git. Offre gestion de projet, planification, CI/CD, sécurité, monitoring, etc. (comparable à GitHub).</li>
+                    <li><strong>Fork (GitLab) :</strong> Copie d'un dépôt.</li>
+                    <li><strong>Merge Request (Pull Request en GitHub) :</strong> Permet de vérifier les modifications du code source dans une branche avant la fusion.</li>
+                    <li><strong>Collaboration GitLab :</strong> Ajouter des membres à un dépôt avec des rôles (ex: Maintainer pour `push` direct).</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Manipuler l’outil de mesure de la qualité du code (SonarQube) :</h4>
+                <ul>
+                    <li><strong>Qualité du code :</strong> Aussi appelée qualité structurelle du logiciel, concerne la manière dont les fonctionnalités sont implémentées (robustesse, maintenabilité, lisibilité). Mesurée par des outils d'analyse statique.</li>
+                    <li><strong>Métrique logicielle :</strong> Mesure d'une propriété d'un logiciel (ex: nombre de lignes de code, complexité cyclomatique).</li>
+                    <li><strong>SonarQube :</strong> Logiciel open source de mesure de la qualité du code source. Fournit des informations sur les problèmes (bugs, vulnérabilités, code smells) et le temps de remédiation. Supporte de nombreux langages.</li>
+                    <li><strong>Architecture SonarQube :</strong> Exécuteur (analyse), base de données (stocke résultats), serveur web (interface de consultation).</li>
+                    <li><strong>Défauts logiciels (SonarQube) :</strong>
+                        <ul>
+                            <li><strong>Bugs :</strong> Anomalies évidentes, impactent la fiabilité.</li>
+                            <li><strong>Vulnérabilités :</strong> Faiblesses pouvant nuire au système, impactent la sécurité.</li>
+                            <li><strong>Code smells :</strong> Mauvaises pratiques de code (code dupliqué, commentaires inutiles), impactent la maintenabilité.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Métriques clés (SonarQube) :</strong> Scores de maintenabilité, fiabilité et sécurité (MFS), densité des commentaires, taux de duplication du code, nombre de tests unitaires, complexité du code (cyclomatique).</li>
+                    <li><strong>Intégration SonarQube :</strong> S'intègre avec les IDE (SonarLint pour analyse locale), SCM (GitLab/GitHub), serveurs d'intégration continue (Jenkins, Travis CI) pour une analyse continue.</li>
+                    <li><strong>Installation et Configuration SonarQube :</strong> Nécessite JDK. Lancement via <code>startSonar.bat</code>. Accès via <code>localhost:9000</code> (admin/admin). Création de projets et génération de jetons (tokens) pour l'analyse.</li>
+                    <li><strong>SonarScanner :</strong> Outil utilisé par SonarQube pour scanner le projet. Un fichier <code>sonar-project.properties</code> configure l'analyse.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="m110-devops-chain">5. Mettre en œuvre les outils de la chaîne du DevOps</h3>
+        <ul>
+            <li>
+                <h4>Introduire la chaîne DevOps :</h4>
+                <ul>
+                    <li><strong>Définition :</strong> Ensemble de pratiques pour la collaboration et la communication entre développeurs et opérations IT, automatisant la livraison logicielle et les changements d'infrastructure.</li>
+                    <li><strong>Avantages :</strong> Collaboration, vitesse (accélère le Time-to-Market), agilité, satisfaction client, innovation, sécurité.</li>
+                    <li><strong>Outils DevOps :</strong>
+                        <ul>
+                            <li><strong>Gestion de code source :</strong> Git, Subversion ; plateformes comme GitHub, GitLab, Bitbucket.</li>
+                            <li><strong>Tests d’intégration/déploiement continu (CI/CD) :</strong> Jenkins, GitLab CI, Bamboo, Travis CI.</li>
+                            <li><strong>Conteneurs :</strong> Docker ; Orchestrateurs comme Kubernetes, MesOs, Docker-Swarm.</li>
+                            <li><strong>Cloud providers :</strong> Google Cloud, Azure, AWS (avec services de load balancing).</li>
+                            <li><strong>Automatisation et gestion de configuration :</strong> Terraform (provisionnement infra), Ansible, Puppet, Salt (gestion config serveurs).</li>
+                            <li><strong>Monitoring et alerting :</strong> Prometheus, Grafana, ELK (Elasticsearch, Logstash, Kibana).</li>
+                            <li><strong>Gestion de projet :</strong> Jira, Trello.</li>
+                            <li><strong>Gestion des secrets :</strong> Vault.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Lien entre l’agilité et DevOps :</strong> DevOps découle de l'agilité pour réduire l'écart entre les développeurs et les opérateurs. La philosophie CALMS (Culture, Automation, Lean, Measurement, Sharing) est à la base de DevOps.</li>
+                    <li><strong>Définition des notions (CI/CD) :</strong>
+                        <ul>
+                            <li><strong>Intégration Continue (CI) :</strong> Méthode DevOps où les développeurs intègrent régulièrement leurs modifications de code à un référentiel centralisé, suivies de builds et tests automatiques pour détecter rapidement les bogues.</li>
+                            <li><strong>Livraison Continue (CD) :</strong> Les modifications de code sont automatiquement préparées pour publication en production après les tests (le développeur prend la décision finale de déploiement).</li>
+                            <li><strong>Déploiement Continu (CD) :</strong> Va plus loin que la livraison continue en orchestrant automatiquement le déploiement des nouvelles fonctionnalités en production, sans intervention manuelle.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>Mettre en place la CI/CD avec GitLab :</h4>
+                <ul>
+                    <li><strong>GitLab CI :</strong> Système d’intégration continue intégré à GitLab, automatisant les builds, tests, livraisons et déploiements.</li>
+                    <li><strong>Pipeline CI/CD :</strong> Série d'étapes pour distribuer une nouvelle version d'un logiciel, utilisant la surveillance et l'automatisation. Phases courantes : Création, Test, Lancement, Déploiement, Validation.</li>
+                    <li><strong>Composants du pipeline GitLab CI/CD :</strong>
+                        <ul>
+                            <li><strong>Pipelines :</strong> Composant de haut niveau gérant les étapes et tâches.</li>
+                            <li><strong>Runner :</strong> Application qui exécute les tâches dans un pipeline.</li>
+                            <li><strong>Jobs (Tâches) :</strong> Ensemble d'instructions à exécuter par un runner.</li>
+                            <li><strong>Stages (Étapes) :</strong> Déterminent quand exécuter les tâches (lancées séquentiellement, jobs d'un même stage en parallèle).</li>
+                            <li><strong>Artéfacts :</strong> Fichiers créés par GitLab après un pipeline.</li>
+                            <li><strong>Tags :</strong> Pour sélectionner un Runner spécifique.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Configuration du pipeline :</strong> Se fait via un fichier <code>.gitlab-ci.yml</code> à la racine du projet, définissant les stages et jobs.</li>
+                    <li><strong>Manipulation du pipeline :</strong> Via l'interface web de GitLab, on peut configurer, démarrer ("run pipeline") et visualiser l'état du pipeline.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
